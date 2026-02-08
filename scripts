@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Script for alignment, sorting and gene counting
+# Requirements: Bowtie2, Samtools
+
+# Build genome index (only needed once)
+bowtie2-build Reference.fasta Reference
+
+# Create output directories
+mkdir -p results/bam
+mkdir -p results/counts
+mkdir -p results/coverage
+
+# Process all paired-end samples in folder
+for sample in *_R1.fastq.gz
+do
+  base=$(basename ${sample} _R1.fastq.gz)
+
+  echo "Processing sample: ${base}"
+
+  # Alignment
+  bowtie2 --maxins 800 -t -x Reference -p 8 --fr \
+  -1 ${base}_R1.fastq.gz -2 ${base}_R2.fastq.gz | \
+  samtools view -Sb -@8 | samtools sort --@8 > results/bam/${base}.sorted.bam
+
+  # Coverage report
+  samtools coverage results/bam/${base}.sorted.bam > results/coverage/${base}_coverage.txt
+
+  # Gene counts extraction
+  samtools view results/bam/${base}.sorted.bam | \
+  awk '{print $3}' | sort | uniq -c | \
+  awk '{print $2 "\t" $1}' > results/counts/${base}_counts.txt
+
+  echo "Finished: ${base}"
+done
+
+echo "All samples processed."
