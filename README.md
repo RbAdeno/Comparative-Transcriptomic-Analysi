@@ -39,10 +39,29 @@ FastQC quality control outputs for all sequenced samples:
 
 - `BX_AZ1_1_fastqc.html`
 - `BX_AZ1_2_fastqc.html`
+- `BX_AZ2_1_fastqc.html`
+- `BX_AZ2_2_fastqc.html`
+- `BX_AZ3_1_fastqc.html`
+- `BX_AZ3_2_fastqc.html`
 - `BX_C1_1_fastqc.html`
-- `LNCAP_AZ1_1_fastqc.html`
-- `LNCAP_C1_1_fastqc.html`
-- *(and additional reports for all replicates)*
+- `BX_C1_2_fastqc.html`
+- `BX_C2_1_fastqc.html`
+- `BX_C2_2_fastqc.html`
+- `BX_C3_1_fastqc.html`
+- `BX_C3_2_fastqc.html`
+- `LNCAP__AZ1_1_fastqc.html`
+- `LNCAP__AZ1_2_fastqc.html`
+- `LNCAP__AZ2_1_fastqc.html`
+- `LNCAP__AZ2_2_fastqc.html`
+- `LNCAP__AZ3_1_fastqc.html`
+- `LNCAP__AZ3_2_fastqc.html`
+- `LNCAP__C1_1_fastqc.html`
+- `LNCAP__C1_2_fastqc.html`
+- `LNCAP__C2_1_fastqc.html`
+- `LNCAP__C2_2_fastqc.html`
+- `LNCAP__C3_1_fastqc.html`
+- `LNCAP__C3_2_fastqc.html`
+- 
 
 ### Differential Expression Results
 
@@ -55,8 +74,7 @@ Processed result files for functional enrichment and differential expression ana
 
 ### Visualizations
 
-- `heatmap_diferencial_BxPC3_LNCaP.pdf` – final comparative heatmap
-- `heat_map.txt` – data matrix used for heatmap generation
+
 
 ### Supporting Data
 
